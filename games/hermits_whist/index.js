@@ -2,21 +2,15 @@ var config = {
         type: Phaser.AUTO,
         width: 800,
         height: 600,
-        physics: {
-            default: 'arcade',
-            arcade: {
-                gravity: { y: 200 }
-            }
-        },
         scene: {
             preload: preload,
             create: create,
             update: update
         }
     };
-
+window.onload = function() {
     var game = new Phaser.Game(config);
-
+}
     function preload ()
     {
         //this.load.setBaseURL('http://labs.phaser.io');
@@ -31,31 +25,16 @@ var config = {
     function create ()
     {
         this.add.image(400, 300, 'back');
-        var cb = this.add.image(400, 300, 'cb');
-        gameObject.setInteractive({ draggable: true });
-		scene.input.setDraggable(gameObject);
+        var cb = this.add.image(400, 300, 'cb').setInteractive();
+        
         this.input.setDraggable(cb);
-        //  The pointer has to move 16 pixels before it's considered as a drag
-		this.input.dragDistanceThreshold = 16;
-
-		this.input.on('dragstart', function (pointer, gameObject) {
-
-			gameObject.setTint(0xff0000);
-
-		});
 
 		this.input.on('drag', function (pointer, gameObject, dragX, dragY) {
-
 			gameObject.x = dragX;
 			gameObject.y = dragY;
 
 		});
 
-		this.input.on('dragend', function (pointer, gameObject) {
-
-			gameObject.clearTint();
-
-		});
         /* var particles = this.add.particles('red');
 
         var emitter = particles.createEmitter({
