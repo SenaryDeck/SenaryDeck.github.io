@@ -23,7 +23,7 @@ var config = {
 
         this.load.image('back', 'assets/backgrounds/back1.jpg');
         this.load.image('cb', 'assets/cardback/back.jpg');
-        this.load.image('c', 'assets/cards/back.jpg');
+        this.load.image('c', 'assets/cards/cards.png');
         //this.load.image('logo', 'assets/sprites/phaser3-logo.png');
         //this.load.image('red', 'assets/particles/red.png');
     }
@@ -31,7 +31,7 @@ var config = {
     function create ()
     {
         this.add.image(400, 300, 'back');
-        var cb = this.add.image(400, 100, 'cb');
+        var c = this.add.image(400, 100, 'c');
         /* var particles = this.add.particles('red');
 
         var emitter = particles.createEmitter({
