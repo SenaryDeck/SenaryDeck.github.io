@@ -31,7 +31,7 @@ var config = {
     function create ()
     {
         this.add.image(400, 300, 'back');
-
+        var cb = this.physics.add.image(400, 100, 'cb');
         /*var particles = this.add.particles('red');
 
         var emitter = particles.createEmitter({
