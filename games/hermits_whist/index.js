@@ -23,7 +23,7 @@ var config = {
 
         this.load.image('back', 'assets/backgrounds/back1.jpg');
         this.load.image('cb', 'assets/cardback/back.jpg');
-        this.load.image('c', 'assets/cards/cards.png');
+        this.load.spritesheet('c', 'assets/cards/cards.png', 30, 40);
         //this.load.image('logo', 'assets/sprites/phaser3-logo.png');
         //this.load.image('red', 'assets/particles/red.png');
     }
