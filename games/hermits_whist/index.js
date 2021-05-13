@@ -21,14 +21,16 @@ var config = {
     {
         //this.load.setBaseURL('http://labs.phaser.io');
 
-        this.load.image('sky', 'assets/backgrounds/back1.jpg');
+        this.load.image('back', 'assets/backgrounds/back1.jpg');
+        this.load.image('cb', 'assets/cardback/back.jpg');
+        this.load.image('c', 'assets/cards/back.jpg');
         //this.load.image('logo', 'assets/sprites/phaser3-logo.png');
         //this.load.image('red', 'assets/particles/red.png');
     }
 
     function create ()
     {
-        this.add.image(400, 300, 'sky');
+        this.add.image(400, 300, 'back');
 
         /*var particles = this.add.particles('red');
 
