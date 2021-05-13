@@ -32,6 +32,13 @@ var config = {
     {
         this.add.image(400, 300, 'back');
         var cb = this.add.image(400, 300, 'cb');
+        this.input.setDraggable(cb);
+        this.input.on('drag', function (pointer, gameObject, dragX, dragY) {
+
+			gameObject.x = dragX;
+			gameObject.y = dragY;
+
+		});
         /* var particles = this.add.particles('red');
 
         var emitter = particles.createEmitter({
