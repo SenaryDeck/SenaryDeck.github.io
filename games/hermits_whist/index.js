@@ -33,10 +33,25 @@ var config = {
         this.add.image(400, 300, 'back');
         var cb = this.add.image(400, 300, 'cb');
         this.input.setDraggable(cb);
-        this.input.on('drag', function (pointer, gameObject, dragX, dragY) {
+        //  The pointer has to move 16 pixels before it's considered as a drag
+		this.input.dragDistanceThreshold = 16;
+
+		this.input.on('dragstart', function (pointer, gameObject) {
+
+			gameObject.setTint(0xff0000);
+
+		});
+
+		this.input.on('drag', function (pointer, gameObject, dragX, dragY) {
 
 			gameObject.x = dragX;
 			gameObject.y = dragY;
+
+		});
+
+		this.input.on('dragend', function (pointer, gameObject) {
+
+			gameObject.clearTint();
 
 		});
         /* var particles = this.add.particles('red');
