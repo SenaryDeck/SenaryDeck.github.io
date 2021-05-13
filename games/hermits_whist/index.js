@@ -32,7 +32,7 @@ var config = {
     {
         this.add.image(400, 300, 'back');
         var cb = this.add.image(400, 100, 'cb');
-        /*var particles = this.add.particles('red');
+        /* var particles = this.add.particles('red');
 
         var emitter = particles.createEmitter({
             speed: 100,
