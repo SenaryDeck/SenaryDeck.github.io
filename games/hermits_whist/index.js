@@ -32,6 +32,8 @@ var config = {
     {
         this.add.image(400, 300, 'back');
         var cb = this.add.image(400, 300, 'cb');
+        gameObject.setInteractive({ draggable: true });
+		scene.input.setDraggable(gameObject);
         this.input.setDraggable(cb);
         //  The pointer has to move 16 pixels before it's considered as a drag
 		this.input.dragDistanceThreshold = 16;
