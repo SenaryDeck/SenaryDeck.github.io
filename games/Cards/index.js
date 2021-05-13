@@ -25,11 +25,11 @@ window.onload = function() {
     function create ()
     {
         this.add.image(400, 300, 'back');
-        var cb1 = this.add.image(200, 150,, 'cb').setInteractive();
+        var cb1 = this.add.image(200, 150, 'cb').setInteractive();
         this.input.setDraggable(cb1);
-        var cb2 = this.add.image(200, 150,, 'cb').setInteractive();
+        var cb2 = this.add.image(200, 150, 'cb').setInteractive();
         this.input.setDraggable(cb2);
-        var cb3 = this.add.image(200, 150,, 'cb').setInteractive();
+        var cb3 = this.add.image(200, 150, 'cb').setInteractive();
         this.input.setDraggable(cb3);
 
 		this.input.on('drag', function (pointer, gameObject, dragX, dragY) {
