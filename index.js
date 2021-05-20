@@ -228,7 +228,7 @@ var SceneC = new Phaser.Class({
         this.load.audio('contact', [
         "assets/Audio/contact1.wav"
         ]);
-        this.load.text('rules', 'assets/text/rules.txt');
+        this.load.text('rules', 'assets/Text/rules.txt');
     },
 
     create: function ()
