@@ -155,7 +155,7 @@ var SceneB = new Phaser.Class({
         console.log('scene a');
         this.scene.start('sceneA');
       });
-      var h = this.add.text(700, 15, 'V0.21', { fontSize: '32px', fill: '#fff' });
+      var h = this.add.text(16, 45, 'Story', { fontSize: '32px', fill: '#fff' });
       h.setInteractive({ useHandCursor: true  });
       h.on('pointerover',function(pointer){
         console.log('hover');
@@ -167,10 +167,25 @@ var SceneB = new Phaser.Class({
       });
       h.on('pointerdown', () => {
         this.sound.add('click').play();
+        console.log('scene a');
+        window.location.replace("story.html");
+      });
+      var vr = this.add.text(650, 15, 'V0.2.1', { fontSize: '32px', fill: '#fff' });
+      vr.setInteractive({ useHandCursor: true  });
+      vr.on('pointerover',function(pointer){
+        console.log('hover');
+        vr.setTint(0xff00ff, 0xffff00, 0x0000ff, 0xff0000);
+      });
+      vr.on('pointerout',function(pointer){
+        console.log('out');
+        vr.clearTint()
+      });
+      vr.on('pointerdown', () => {
+        this.sound.add('click').play();
         console.log('Visit https://www.senary-deck.com');
         window.open('https://www.senary-deck.com', '_blank');
       });
-      var hw = this.add.text(16, 45, 'Hermits Whist', { fontSize: '32px', fill: '#fff' });
+      var hw = this.add.text(16, 75, 'Hermits Whist', { fontSize: '32px', fill: '#fff' });
       hw.setInteractive({ useHandCursor: true  });
       hw.on('pointerover',function(pointer){
         console.log('hover');
@@ -185,7 +200,7 @@ var SceneB = new Phaser.Class({
         console.log('scene c');
         this.scene.start('sceneC');
       });
-      var dr = this.add.text(16, 75, 'More Comming Soon', { fontSize: '32px', fill: '#fff' });
+      var dr = this.add.text(16, 105, 'More Comming Soon', { fontSize: '32px', fill: '#fff' });
       dr.setInteractive({ useHandCursor: true  });
       dr.on('pointerover',function(pointer){
         console.log('hover');
@@ -228,6 +243,9 @@ var SceneC = new Phaser.Class({
         this.load.audio('contact', [
         "assets/Audio/contact1.wav"
         ]);
+        this.load.audio('hw-nar', [
+        "assets/Audio/hw-rules.mp3"
+        ]);
         this.load.text('rules', 'assets/Text/rules.txt');
     },
 
@@ -236,6 +254,7 @@ var SceneC = new Phaser.Class({
       w = 0;
       this.add.image(400, 300, 'back');
       var music = this.sound.add('theme');
+      var hwnar = this.sound.add('hw-nar');
       //music.play();
       var win = 0;
       var lose = 0;
@@ -259,6 +278,7 @@ var SceneC = new Phaser.Class({
         var rules = this.add.text(0, 45, game.cache.text.get('rules'), { fontSize: '12px', fill: '#fff', wordWrap: { width: 800 } });
         var hr = this.add.text(16, 16, 'Back', { fontSize: '32px', fill: '#fff' });
         hr.setInteractive({ useHandCursor: true  } );
+        hwnar.play();
         hr.on('pointerdown', () => {
           rules.destroy();
           rules = null;
@@ -266,6 +286,9 @@ var SceneC = new Phaser.Class({
           rule = null;
           hr.destroy();
           hr = null;
+          hwnar.stop();
+          //hwnar.destroy();
+          //hwnar = null;
         });
       });
       function shuffle(array) {
@@ -593,7 +616,7 @@ var SceneC = new Phaser.Class({
                       th.scene.start('sceneD');
                     }
                     if(w == 3){
-                      th.scene.start('sceneB');
+                      th.scene.start('sceneE');
                     }
                     console.log('move on');
                     console.log(x);
@@ -687,7 +710,7 @@ var SceneC = new Phaser.Class({
            c1 = th.add.image(50, 500, cards[0]).setInteractive({ useHandCursor: true  } );
           playc(th, c1, cx, cards[0]);
            c2 = th.add.image(100, 500, cards[1]).setInteractive({ useHandCursor: true  } );
-          playc(th, c2, cx), cards[1];
+          playc(th, c2, cx, cards[1]);
            c3 = th.add.image(150, 500, cards[2]).setInteractive({ useHandCursor: true  } );
           playc(th, c3, cx, cards[2]);
            c4 = th.add.image(200, 500, cards[3]).setInteractive({ useHandCursor: true  } );
