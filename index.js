@@ -57,7 +57,7 @@ var SceneA = new Phaser.Class({
         this.load.image('title', 'assets/Text/text.png');
         var i;
         for (i = 0; i < cards.length; i++) {
-          this.load.image(cards[i], 'assets/Cards/' + cards[i] + '.jpg');
+          this.load.image(cards[i], 'assets/Cards/' + cards[i] + '.png');
         }
         this.load.audio('click', [
         "assets/Audio/mouseclick.wav"
@@ -233,7 +233,7 @@ var SceneC = new Phaser.Class({
     {
         this.load.image('back3', 'assets/backgrounds/black.png');
         this.load.image('back', 'assets/backgrounds/back1.jpg');
-        this.load.image('sb', 'assets/cardback/sb.jpg');
+        this.load.image('sb', 'assets/cardback/sb.png');
         this.load.audio('theme', [
         "assets/Audio/I'm Misbehaving_0.wav"
         ]);
